@@ -8,10 +8,14 @@ st.write("""
 st.header('User Input Parameters')
 
 def user_input_features():
-    num1 = st.number_input("Numerator",step=1)
-    num2 = st.number_input("Denominator",step=1)
+    try:
+        
+        num1 = st.number_input("Numerator",step=1)
+        num2 = st.number_input("Denominator",step=1)
 
-    return f'Division of {num1} and {num2} is {num1/num2}'
+        return f'Division of {num1} and {num2} is {num1/num2}'
+    except ZeroDivisionError:
+        return 'Denominator cannot be Zero'
 
 result = user_input_features()
 
